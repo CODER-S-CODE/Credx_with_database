@@ -1,0 +1,62 @@
+:root{
+  --primary:#072146; --accent:#3DB7FF; --bg:#F7FBFF; --card:#2b2f33; --light:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter, "Segoe UI", system-ui, Arial, sans-serif;
+  background:linear-gradient(180deg,var(--bg) 0%, rgba(7,33,70,0.03) 40%, var(--primary) 100%);
+  color:var(--light); min-height:100vh; display:flex; flex-direction:column;
+}
+
+header.app-header{
+  background:linear-gradient(90deg,#E6F6FF 0%, var(--accent) 40%, #EAF6FF 70%);
+  padding:22px 20px; text-align:center; font-weight:800; font-size:1.6rem;
+  letter-spacing:1.6px; box-shadow:0 8px 30px rgba(3,30,60,0.12);
+  color:var(--primary);
+}
+header.app-header .tag{display:block;font-size:.65rem;margin-top:6px;color:rgba(7,33,70,0.8)}
+
+.wrap{max-width:1100px;margin:18px auto; width:100%; display:flex; gap:18px; padding:0 14px; flex:1}
+.sidebar{min-width:180px; max-width:220px; background:linear-gradient(180deg, rgba(6,40,70,0.95), rgba(10,48,84,0.95)); border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:10px; box-shadow:0 8px 40px rgba(7,33,70,.18)}
+.nav-btn{background:rgba(255,255,255,0.03); color:var(--light); border:0; padding:12px 14px; border-radius:12px; text-align:left; cursor:pointer; font-weight:600; transition:all .12s; display:flex; gap:10px; align-items:center}
+.nav-btn:hover{transform:translateY(-4px); background:linear-gradient(90deg, rgba(61,183,255,0.12), rgba(7,33,70,0.06))}
+.nav-btn.active{background:var(--accent); color:var(--primary); box-shadow:0 8px 24px rgba(61,183,255,.12)}
+
+.main{background:linear-gradient(180deg, rgba(7,33,70,0.12), rgba(7,33,70,0.14)); border-radius:14px; padding:22px; flex:1; min-height:420px; box-shadow:0 10px 40px rgba(7,33,70,0.12); overflow:auto; color:var(--light)}
+.card{background: linear-gradient(180deg,#2b2f33 0%, #232629 100%); padding:16px; border-radius:12px; margin-bottom:14px; border: 1px solid rgba(255,255,255,0.06); color: var(--light); box-shadow: 0 8px 30px rgba(2,12,22,0.45);}
+
+.balance-circle{width:120px;height:120px;border-radius:999px;background:linear-gradient(120deg,var(--primary), rgba(6,40,70,0.95));display:flex;align-items:center;justify-content:center;font-weight:800;margin:8px auto;color:var(--light);border:5px solid var(--accent)}
+
+.kpi-row{display:flex;gap:12px;flex-wrap:wrap}
+.kpi{flex:1;min-width:160px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;text-align:center}
+.kpi .label{opacity:.8;font-size:.82rem}
+.kpi .value{font-weight:800;font-size:1.1rem;margin-top:6px}
+
+.actions{display:flex;gap:12px;margin-top:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.7rem 1rem;border-radius:12px;font-weight:800;font-size:.95rem;border:0;cursor:pointer;transition:transform .14s ease, box-shadow .14s ease;box-shadow:0 8px 20px rgba(2,12,22,0.35);user-select:none;}
+.btn-deposit{background:linear-gradient(90deg,#2dd4bf 0%, #06b6d4 100%);color:#032033}
+.btn-deposit:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(6,130,138,0.20)}
+.btn-withdraw{background:linear-gradient(90deg,#ffb86b 0%, #ff8a5b 100%);color:#2b1f10}
+.btn-withdraw:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(255,138,91,0.20)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--light)}
+.btn-ghost:hover{background:rgba(255,255,255,0.02)}
+
+input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.06);color:var(--light);margin-top:8px}
+
+table{width:100%;border-collapse:collapse;margin-top:8px;color:var(--light)}
+th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+th{background:rgba(255,255,255,0.95);color:var(--primary);font-weight:700;position:sticky;top:0;z-index:2}
+td{background:rgba(255,255,255,0.02);color:var(--light)}
+
+.money-gallery{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.money-img{width:240px;height:160px;object-fit:cover;border-radius:10px;box-shadow:0 8px 30px rgba(2,20,40,0.18);opacity:.95;transition:transform .14s}
+.money-img:hover{transform:translateY(-6px) scale(1.03);opacity:1}
+
+@media (max-width:600px){
+  .wrap{flex-direction:column;padding:0 12px}
+  .sidebar{flex-direction:row;overflow:auto;min-width:0;border-radius:10px;padding:10px}
+  .nav-btn{flex:1;white-space:nowrap}
+  .actions{flex-direction:column}
+  .money-img{width:140px;height:100px}
+}
